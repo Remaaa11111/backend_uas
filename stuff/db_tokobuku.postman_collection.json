@@ -1,0 +1,686 @@
+{
+	"info": {
+		"_postman_id": "cf2f454b-608c-48d8-9935-0c01b1b022ae",
+		"name": "db_tokobuku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "39840531"
+	},
+	"item": [
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "/api/books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{CnC}}/api/books/"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/books/create",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "judul",
+									"value": "Working Effectively with Legacy Codeee",
+									"type": "text"
+								},
+								{
+									"key": "penulis",
+									"value": "Michael Bulu u",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "Education",
+									"type": "text"
+								},
+								{
+									"key": "cover_image",
+									"value": "https://images-na.ssl-images-amazon.com/images/I/51yS8PYs03L._SX258_BO1,204,203,200_.jpg",
+									"type": "text"
+								},
+								{
+									"key": "deskripsi",
+									"value": "Working Effectively with Legacy Code adalah buku pemrograman yang ditulis oleh Michael C. Feathers. Ini adalah salah satu buku terbaik untuk mempelajari pemrograman yang mengajarkan cara mengatasi masalah kode lama tanpa melalui tugas mahal untuk menulis ulang semua kode yang ada.",
+									"type": "text"
+								},
+								{
+									"key": "stok_buku",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "available",
+									"type": "text"
+								},
+								{
+									"key": "harga",
+									"value": "15.000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{CnC}}/api/books/update/31",
+							"host": [
+								"{{CnC}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"update",
+								"31"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/books/update/id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "judul",
+									"value": "Working Effectively with Legacy Code",
+									"type": "text"
+								},
+								{
+									"key": "penulis",
+									"value": "Michael Bulu ",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "Education",
+									"type": "text"
+								},
+								{
+									"key": "cover_image",
+									"value": "https://images-na.ssl-images-amazon.com/images/I/51yS8PYs03L._SX258_BO1,204,203,200_.jpg",
+									"type": "text"
+								},
+								{
+									"key": "deskripsi",
+									"value": "Working Effectively with Legacy Code adalah buku pemrograman yang ditulis oleh Michael C. Feathers. Ini adalah salah satu buku terbaik untuk mempelajari pemrograman yang mengajarkan cara mengatasi masalah kode lama tanpa melalui tugas mahal untuk menulis ulang semua kode yang ada.",
+									"type": "text"
+								},
+								{
+									"key": "stok_buku",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "available",
+									"type": "text"
+								},
+								{
+									"key": "harga",
+									"value": "15.000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{CnC}}/api/books/update/10",
+							"host": [
+								"{{CnC}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"update",
+								"10"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/books/delete/id_books",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{CnC}}/api/books/delete/31"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1f05bccd-e079-4420-956d-3a71c8f467b4"
+								}
+							]
+						},
+						"url": "{{CnC}}/api/books/upload"
+					},
+					"response": []
+				},
+				{
+					"name": "{{CnC}}/api/books/idbooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{CnC}}/api/books/17"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "protected",
+			"item": [
+				{
+					"name": "/api/protected/me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MTM5MTE1MSwianRpIjoiNTM1MmU3ZmYtNzk4Yi00YzUzLTg5NjUtOGRiNWIxMWVmZjg1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFtYXJhZ2l0YWEiLCJuYmYiOjE3NTEzOTExNTEsImNzcmYiOiJkNTMxNDQxZS05Y2ZlLTQ4NTYtOWYzOC1iYWMxMDlhNTJjNDUiLCJleHAiOjE3NTEzOTQ3NTF9._TrEvsm_U82spNNtzcpkmcNfX9aG_PdTYHpdQ1kMO5Q"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{CnC}}/api/protected/me"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "loan",
+			"item": [
+				{
+					"name": "api/loans",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MjA2Njc4MCwianRpIjoiNGRkY2ViOTItNDg2MS00NjdmLWFkMjktMGNmZWE2ZTk2ZWFiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3NTIwNjY3ODAsImNzcmYiOiIxMzE5NzM4Mi1lMTRiLTRmYTEtYmExNi03YWQwOWZjZTAyZTIiLCJleHAiOjE3NTIwNzAzODAsImVtYWlsIjoidHJpc25hQGdtYWlsLmNvbSIsInJvbGUiOiJtZW1iZXIifQ.wDJMrEaVvKTIy-_OlI1-97tmAlVXhnGum97zNS6zCgY"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "Amaragita",
+									"type": "text"
+								},
+								{
+									"key": "telepon",
+									"value": "+62 897-7217-561",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "amaragita@student.undiksha.ac.id",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:5000/api/loans/"
+					},
+					"response": []
+				},
+				{
+					"name": "api/loans/user/userid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MjA2Njc4MCwianRpIjoiNGRkY2ViOTItNDg2MS00NjdmLWFkMjktMGNmZWE2ZTk2ZWFiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3NTIwNjY3ODAsImNzcmYiOiIxMzE5NzM4Mi1lMTRiLTRmYTEtYmExNi03YWQwOWZjZTAyZTIiLCJleHAiOjE3NTIwNzAzODAsImVtYWlsIjoidHJpc25hQGdtYWlsLmNvbSIsInJvbGUiOiJtZW1iZXIifQ.wDJMrEaVvKTIy-_OlI1-97tmAlVXhnGum97zNS6zCgY"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "Amaragita",
+									"type": "text"
+								},
+								{
+									"key": "telepon",
+									"value": "+62 897-7217-561",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "amaragita@student.undiksha.ac.id",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:5000/api/loans/user/5"
+					},
+					"response": []
+				},
+				{
+					"name": "api/loans/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MjA2Njc4MCwianRpIjoiNGRkY2ViOTItNDg2MS00NjdmLWFkMjktMGNmZWE2ZTk2ZWFiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3NTIwNjY3ODAsImNzcmYiOiIxMzE5NzM4Mi1lMTRiLTRmYTEtYmExNi03YWQwOWZjZTAyZTIiLCJleHAiOjE3NTIwNzAzODAsImVtYWlsIjoidHJpc25hQGdtYWlsLmNvbSIsInJvbGUiOiJtZW1iZXIifQ.wDJMrEaVvKTIy-_OlI1-97tmAlVXhnGum97zNS6zCgY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\": 5,\r\n  \"book_id\": 17,\r\n  \"tanggal_pinjam\": \"2025-07-08\",\r\n  \"tanggal_kembali\": \"2025-06-13\",\r\n  \"status\": \"borrowed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{CnC}}/api/loans/create"
+					},
+					"response": []
+				},
+				{
+					"name": "api/loans/create Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "book_id",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "tanggal_pinjam",
+									"value": "2025-07-9",
+									"type": "text"
+								},
+								{
+									"key": "tanggal_kembali",
+									"value": "2025-06-13",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "borrowed",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{CnC}}/api/loans/update/10"
+					},
+					"response": []
+				},
+				{
+					"name": "api/loans/update/id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MjA1MzA1MCwianRpIjoiYzY4YzQxMjEtNGEzYS00YmFlLWI0OGItOTczZGY4ZTU4MjBjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjYiLCJuYmYiOjE3NTIwNTMwNTAsImNzcmYiOiJiYmMxYjIxOC1lZTQ5LTQ1MDgtYWE2Ny1mYmI5MjI5MjU5NWEiLCJleHAiOjE3NTIwNTY2NTAsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.c0l0dd2y7IIvBoy8kG2xWpkAXbFa-y3dV0tEQ7QKtmE"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tanggal_kembali\": \"2025-07-16\",\r\n  \"status\": \"borrowed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{CnC}}/api/loans/update/29"
+					},
+					"response": []
+				},
+				{
+					"name": "api/loans//delete/id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_buku",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "id_anggota",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "tanggal_pinjam",
+									"value": "2025-06-25",
+									"type": "text"
+								},
+								{
+									"key": "tanggal_kembali",
+									"value": "2025-06-30",
+									"type": "text"
+								},
+								{
+									"key": "denda",
+									"value": "150.000",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{CnC}}/api/loans/delete/9"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authe",
+			"item": [
+				{
+					"name": "/api/auth/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "gita@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "gitaa",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "member",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{CnC}}/api/auth/register",
+							"host": [
+								"{{CnC}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "gita@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "gitaa",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "member",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{CnC}}/api/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "history",
+			"item": [
+				{
+					"name": "/api/history/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_peminjaman",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "returned",
+									"type": "text"
+								},
+								{
+									"key": "keterangan",
+									"value": "Buku dikembalikan",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{CnC}}/api/history/create"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/history/",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:5000/api/history/"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MjA2Njc4MCwianRpIjoiNGRkY2ViOTItNDg2MS00NjdmLWFkMjktMGNmZWE2ZTk2ZWFiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3NTIwNjY3ODAsImNzcmYiOiIxMzE5NzM4Mi1lMTRiLTRmYTEtYmExNi03YWQwOWZjZTAyZTIiLCJleHAiOjE3NTIwNzAzODAsImVtYWlsIjoidHJpc25hQGdtYWlsLmNvbSIsInJvbGUiOiJtZW1iZXIifQ.wDJMrEaVvKTIy-_OlI1-97tmAlVXhnGum97zNS6zCgY"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:5000/api/history/me"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "http://127.0.0.1:5000/api/history/"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:5000/api/history/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dashboard",
+			"item": [
+				{
+					"name": "/api/dashboard/dashboard",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MjAyMzM1OCwianRpIjoiZmIwMDE0MGEtYTUwZi00OTc0LTlkYjktMzA2NTJmMzQwYTMzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjYiLCJuYmYiOjE3NTIwMjMzNTgsImNzcmYiOiJmYjA3YzZkNi1lZWEzLTRhZTYtOWFjYy05ODA2ZDM3Y2RjMDQiLCJleHAiOjE3NTIwMjY5NTgsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.ntfu8bAcSfBe8n5V4rfpojnYhGrwrTxSz5oedniVOI0"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{CnC}}/api/dashboard/dashboard"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "New Request",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MTk4OTk1NywianRpIjoiZjE3ZTFmNzMtM2U0MC00ZThkLTlhZDMtOWY0MDJlZmE3NmI4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3NTE5ODk5NTcsImNzcmYiOiIzYmZiODA0MC03YzM0LTQ0ZWYtYjAyMC0zYzllNDhjNGZkZTQiLCJleHAiOjE3NTE5OTM1NTcsImVtYWlsIjoidHJpc25hQGdtYWlsLmNvbSIsInJvbGUiOiJtZW1iZXIifQ.uQx5VYEWMqbJvGjoHtSwc3hwxnhpH18O-tHgMU18wAU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{CnC}}/api/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MTk5MzA5MywianRpIjoiZjQ3NzBlMWUtMDA0ZC00ZmEyLTgzZWUtZGEwZTdhMTYxYWUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjYiLCJuYmYiOjE3NTE5OTMwOTMsImNzcmYiOiJmZjUyY2Q5NC05YmRiLTQzMjktYmQ3MS0zNzNiMjkwMDlmNjgiLCJleHAiOjE3NTE5OTY2OTMsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.Dvewaz80RTnF9Na5yx5R4-_wnTx9GFwlLYLLqk8X3zQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/profile"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "flask_local",
+			"value": "http://localhost:5000",
+			"type": "default"
+		},
+		{
+			"key": "ngrok",
+			"value": "https://cd74-180-249-185-196.ngrok-free.app/",
+			"type": "default"
+		},
+		{
+			"key": "CC",
+			"value": "https://scarcely-calm-monitor.ngrok-free.app/",
+			"type": "default"
+		},
+		{
+			"key": "CnC",
+			"value": "https://scarcely-calm-monitor.ngrok-free.app/",
+			"type": "default"
+		}
+	]
+}
