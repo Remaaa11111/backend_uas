@@ -1,38 +1,48 @@
-"""Small apps to demonstrate endpoints with basic feature - CRUD"""
+# app.py
+
+"""Library Management App - Basic Flask CRUD"""
 
 from flask import Flask
 from flask_cors import CORS
 from dotenv import load_dotenv
 from extensions import jwt
-from api.books.endpoints import books_endpoints
-from api.auth.endpoints import auth_endpoints
-from api.data_protected.endpoints import protected_endpoints
-from api.fcm.endpoints import firebase_messaging
 from config import Config
-from static.static_file_server import static_file_server
 from flasgger import Swagger
 
+# Import all endpoint blueprints
+from api.books.endpoints import books_bp
+from api.members.endpoints import members_bp
+from api.loans.endpoints import loans_bp
+from api.book_types.endpoints import book_types_bp
 
-# Load environment variables from the .env file
+# (Opsional) auth & protected endpoint
+from api.auth.endpoints import auth_endpoints
+from api.data_protected.endpoints import protected_endpoints
+
+# (Opsional) static file handler
+from static.static_file_server import static_file_server
+
+# Load environment variables
 load_dotenv()
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
+# Allow CORS & JWT
 CORS(app)
-
-
-Swagger(app)
-
-
 jwt.init_app(app)
 
-# register the blueprint
-app.register_blueprint(auth_endpoints, url_prefix='/api/v1/auth')
-app.register_blueprint(protected_endpoints,
-                       url_prefix='/api/v1/protected')
-app.register_blueprint(books_endpoints, url_prefix='/api/v1/books')
-app.register_blueprint(static_file_server, url_prefix='/static/')
-app.register_blueprint(firebase_messaging, url_prefix="/api/v1/private/fcm")
+# Enable Swagger UI
+Swagger(app)
+
+# Register blueprints
+app.register_blueprint(books_bp)
+app.register_blueprint(members_bp)
+app.register_blueprint(loans_bp)
+app.register_blueprint(book_types_bp)
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
+print(app.url_map)
