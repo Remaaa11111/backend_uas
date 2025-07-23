@@ -3,7 +3,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 from helper.db_helper import get_connection
 
 history_bp = Blueprint('history', __name__, url_prefix='/api/history')
-ALLOWED_STATUS = ['dipinjam', 'returned', 'canceled']
+ALLOWED_STATUS = ['scheduled', 'borrowed', 'returned', 'overdue', 'cancelled']
 
 
 # GET semua logs (admin)
@@ -81,7 +81,7 @@ def create_log():
             cursor.execute("""
                 INSERT INTO history_log (id_peminjaman, status, keterangan)
                 VALUES (%s, %s, %s)
-            """, (id_peminjaman, status, keterangan))
+            """, (id_peminjaman, status, f"Status diubah ke {status}"))
             conn.commit()
             new_id = cursor.lastrowid
         return jsonify({"message": "Log created", "id_log": new_id}), 201
